@@ -48,15 +48,13 @@ export const InputNode = ({ id, data }) => {
 
 
   return ( 
-      <BaseNode  title="Input" id={id} direction="left" >
+      <BaseNode  
+      title="Input"
+       id={id} 
+       handles={[{ type: "source",position: Position.Right,handleId: `${id}-value`}]}
+    >
       <NodeInput key={id} currName={currName} handleNameChange={handleNameChange} />
       <NodeSelect label="Type :" currType={inputType} handleTypeChange={handleTypeChange} />
-      <Handle type="source" 
-      position={Position.Right} 
-      id={`${id}-value`} 
-      style={{ 
-               padding: '3px 3px',
-              }} />
        </BaseNode>
   );
 }

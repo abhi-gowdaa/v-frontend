@@ -12,6 +12,12 @@ import { TextNode } from './nodes/textNode';
 import CustomEdge from './customEdge';
 
 import 'reactflow/dist/style.css';
+import { ImageGenerationNode } from './nodes/ImageGeneration';
+import { AudioTranscriptionNode } from './nodes/audioTranscriptionNode';
+import { WebSearchNode } from './nodes/websearchNode';
+import { VectorSearchNode } from './nodes/VectorSearch';
+import { EmailSenderNode } from './nodes/emailSenderNode';
+import { DatabaseNode } from './nodes/databaseNode';
 
 const gridSize = 20;
 const proOptions = { hideAttribution: true };
@@ -20,6 +26,12 @@ const nodeTypes = {
   llm: LLMNode,
   customOutput: OutputNode,
   text: TextNode,
+  image: ImageGenerationNode,
+  audio: AudioTranscriptionNode,
+  webSearch: WebSearchNode,
+  vectorSearch: VectorSearchNode,
+  database: DatabaseNode,
+  emailSender: EmailSenderNode,
 };
 
 const selector = (state) => ({

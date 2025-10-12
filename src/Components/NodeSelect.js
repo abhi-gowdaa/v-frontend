@@ -1,6 +1,6 @@
 import React from 'react';
 
-const NodeSelect = ({ label, type, handleTypeChange }) => {
+const NodeSelect = ({ label, type, handleTypeChange ,content=[]}) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '12px', fontFamily: 'Arial, sans-serif' }}>
       <span style={{ marginBottom: '6px', fontWeight: '500', color: '#222' }}>{label}</span>
@@ -20,8 +20,11 @@ const NodeSelect = ({ label, type, handleTypeChange }) => {
         onFocus={(e) => (e.target.style.border = '1px solid #007BFF')}
         onBlur={(e) => (e.target.style.border = '1px solid #ccc')}
       >
-        <option value="Text">Text</option>
-        <option value="File">Image</option>
+        {content.map((item, index) => (
+          <option key={index} value={item.value}>
+            {item.label}
+          </option>
+        ))}
       </select>
     </div>
   );

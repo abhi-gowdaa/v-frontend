@@ -1,6 +1,36 @@
 import React, { Children } from "react";
+import { Handle, Position } from "reactflow";
 
-const BaseNode = ({ title, id, children, icon }) => {
+
+
+const BaseNode = ({ title, id, children, icon,handles=[] }) => {
+
+
+  const renderHandle = (handleConfig, index) => {
+
+
+    const {
+      type = "source",
+      position = Position.Right,
+      handleId,
+      style = {},
+      ...rest
+    } = handleConfig;
+
+    return (
+      <Handle
+        key={handleId || `${id}-${type}-${index}`}
+        type={type}
+        position={position}
+        id={handleId || `${id}-${type}-${index}`}
+        style={{
+          padding: '3px 3px',
+          ...style
+        }}
+        {...rest}
+      />
+    );
+  };
   return (
     <div
       key={id}
@@ -15,16 +45,9 @@ const BaseNode = ({ title, id, children, icon }) => {
         boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
         transition: "all 0.2s cubic-bezier(0.4, 0, 0.2, 1)",
       }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.12)";
-        e.currentTarget.style.transform = "translateY(-1px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "0 2px 8px rgba(0,0,0,0.08)";
-        e.currentTarget.style.transform = "translateY(0)";
-      }}
-    >
+       >
        
+        {handles.map((handleConfig, index) => renderHandle(handleConfig, index))}
       <div
         style={{
           padding: "12px 16px",
