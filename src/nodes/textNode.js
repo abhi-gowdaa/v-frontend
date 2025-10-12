@@ -106,10 +106,7 @@ export const TextNode = ({ id, data }) => {
 
   return (
      <BaseNode title="Text" id={id}>
-      
        
-
-        {/* Node ID  for referenc shown below*/}
         <div style={{ 
           fontSize: '10px', 
           color: '#999', 
@@ -128,7 +125,7 @@ export const TextNode = ({ id, data }) => {
         handleNameChange={handleTextChange}
       />
         
-        {/* Variable Status */}
+       
         {variables.length > 0 && (
           <div style={{ 
             fontSize: '10px', 
@@ -157,7 +154,7 @@ export const TextNode = ({ id, data }) => {
         )}
       
 
-      {/* Input Handles - one for each variable */}
+       
       {variables.map((variable, index) => {
         const handleId = `${id}-${variable.varName}`;
         
