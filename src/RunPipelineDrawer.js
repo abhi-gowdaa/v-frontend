@@ -30,7 +30,7 @@ export const RunPipelineDrawer = () => {
     setOutput("");
 
     try {
-      const response = await fetch("http://localhost:8000/pipelines/execute", {
+      const response = await fetch("https://v-backend-vl29.onrender.com/pipelines/execute", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nodes, edges, input }),
