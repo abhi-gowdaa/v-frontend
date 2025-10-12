@@ -11,13 +11,19 @@ export const LLMNode = ({ id, data }) => {
         type="target"
         position={Position.Left}
         id={`${id}-system`}
-        style={{top: `${100/3}%`}}
+       style={{ 
+                padding: '3px 3px',
+              }} 
       />
       <Handle
         type="source"
         position={Position.Right}
         id={`${id}-prompt`}
-        style={{top: `${200/3}%`}}
+        style={{ 
+                padding: '4px 4px',
+                marginLeft: '8px',
+                fontSize: '15px',
+              }} 
       />
        
       <div>

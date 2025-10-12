@@ -24,6 +24,10 @@ export const OutputNode = ({ id, data }) => {
         type="target"
         position={Position.Left}
         id={`${id}-value`}
+        style={{ 
+                padding: '3px 3px', 
+               
+              }} 
       />
        
        <NodeInput currName={currName} handleNameChange={handleNameChange} />

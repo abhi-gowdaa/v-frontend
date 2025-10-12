@@ -51,7 +51,12 @@ export const InputNode = ({ id, data }) => {
       <BaseNode  title="Input" id={id} direction="left" >
       <NodeInput key={id} currName={currName} handleNameChange={handleNameChange} />
       <NodeSelect label="Type :" currType={inputType} handleTypeChange={handleTypeChange} />
-      <Handle type="source" position={Position.Right} id={`${id}-value`} />
+      <Handle type="source" 
+      position={Position.Right} 
+      id={`${id}-value`} 
+      style={{ 
+               padding: '3px 3px',
+              }} />
        </BaseNode>
   );
 }
