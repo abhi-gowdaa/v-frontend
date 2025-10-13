@@ -12,7 +12,6 @@ export const EmailSenderNode = ({ id, data }) => {
     <BaseNode
       title="Email Sender"
       id={id}
-      
       handles={[
         { type: "target", position: Position.Left, handleId: `${id}-content` },
         { type: "source", position: Position.Right, handleId: `${id}-status` }

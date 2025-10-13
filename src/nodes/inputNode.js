@@ -45,7 +45,11 @@ export const InputNode = ({ id, data }) => {
     setInputType(e.target.value);
   };
 
-
+const inputOption = [
+    { value: 'text', label: 'text' },
+    { value: 'files', label: 'files' },
+    
+  ];
 
   return ( 
       <BaseNode  
@@ -54,7 +58,7 @@ export const InputNode = ({ id, data }) => {
        handles={[{ type: "source",position: Position.Right,handleId: `${id}-value`}]}
     >
       <NodeInput key={id} currName={currName} handleNameChange={handleNameChange} />
-      <NodeSelect label="Type :" currType={inputType} handleTypeChange={handleTypeChange} />
+      <NodeSelect label="Type :" currType={inputType} handleTypeChange={handleTypeChange} content={inputOption} />
        </BaseNode>
   );
 }

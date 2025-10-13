@@ -1,17 +1,28 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a full-stack web application built using **React** (frontend) and **FastAPI** (backend).  
+The project demonstrates clean component architecture, API integration, and a responsive interface.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## 🌐 Live Demo
+You can try the live hosted version here 👇  
+🔗 **[https://v-frontend-b8ze.onrender.com/](https://v-frontend-b8ze.onrender.com/)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-- 
+Follow the steps below to run the project locally:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 1 Extract the files
 
- 
+1. Frontend Setup
+
+    cd frontend
+    npm install
+    npm start
+    The React app will start at http://localhost:3000
+
+2. Backend Setup
+    cd backend
+    pip install -r requirements.txt
+    uvicorn main:app --reload
+    The FastAPI server will run at http://localhost:8000
+    

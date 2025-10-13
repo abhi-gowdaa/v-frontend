@@ -18,21 +18,16 @@ export const OutputNode = ({ id, data }) => {
     setOutputType(e.target.value);
   };
 
+  const OutputOption = [
+    { value: 'text', label: 'text' },
+    { value: 'files', label: 'files' },
+    
+  ];
+
   return (
-    <BaseNode title="Output" id={id} direction="left" >  
-     <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-value`}
-        style={{ 
-                padding: '3px 3px', 
-               
-              }} 
-      />
-       
+    <BaseNode title="Output" id={id}  handles={[{ type: "target", position: Position.Left, handleId: `${id}-value`}]}>  
        <NodeInput currName={currName} handleNameChange={handleNameChange} />
-        <NodeSelect label="Type :" type={outputType} handleTypeChange={handleTypeChange}/>
-     
+        <NodeSelect label="Type :" type={outputType} handleTypeChange={handleTypeChange} content={OutputOption}/>
     </BaseNode>
   );
 }

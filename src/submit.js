@@ -19,7 +19,7 @@ export const SubmitButton = () => {
 
   const handleClick = async () => {
     try {
-      const response = await fetch("https://v-backend-vl29.onrender.com/pipelines/parse", {
+      const response = await fetch("http://localhost:8000/pipelines/parse", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nodes, edges }),
