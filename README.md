@@ -16,13 +16,20 @@ Follow the steps below to run the project locally:
 1. Frontend Setup
 
     cd frontend
+
     npm install
+
     npm start
+
     The React app will start at http://localhost:3000
 
 2. Backend Setup
+
     cd backend
+
     pip install -r requirements.txt
+
     uvicorn main:app --reload
+    
     The FastAPI server will run at http://localhost:8000
     
